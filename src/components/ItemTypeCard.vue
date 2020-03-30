@@ -15,6 +15,11 @@ export default {
     name: 'ItemTypeCard',
     components: {
         DownArrow
+    },
+    computed: {
+        items () {
+            return this.$store.state.items[0]
+        }
     }
 }
 </script>
