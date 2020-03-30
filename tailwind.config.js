@@ -10,6 +10,10 @@ module.exports = {
       xl: '1280px',
     },
     colors: {
+
+      main: '#726A5F',
+      background: '#FFFFF4',
+
       transparent: 'transparent',
 
       black: '#000',
