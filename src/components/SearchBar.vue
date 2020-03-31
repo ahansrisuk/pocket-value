@@ -1,7 +1,7 @@
 <template>
     <div class="border">
         <div class="flex p-1">
-            <SearchIcon/>
+            <img src="../assets/search.svg" alt="search" />
             <input type="text" class="bg-background focus:outline-none ml-3" v-model="searchInput">
         </div>
     </div>
@@ -9,13 +9,8 @@
 
 <script>
 
-import SearchIcon from '../assets/search';
-
 export default {
     name: 'SearchBar',
-    components: {
-        SearchIcon
-    },
     data: function () {
         return {
             searchInput: ''

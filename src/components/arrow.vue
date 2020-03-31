@@ -38,7 +38,7 @@ export default {
                 targets,
                 rotateX: [180, 0],
                 easing: 'easeInOutSine',
-                duration: 800,
+                duration: 200,
                 autoplay: false,
             })
         this.openAnimation = 
@@ -46,7 +46,7 @@ export default {
                 targets,
                 rotateX: [0, 180],
                 easing: 'easeInOutSine',
-                duration: 800,
+                duration: 200,
                 autoplay: false,
             })
     }

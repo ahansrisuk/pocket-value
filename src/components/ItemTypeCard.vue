@@ -1,5 +1,6 @@
 <template>
-    <div class="border px-2 max-h-1/2 overflow-auto">
+    <div 
+        class="border px-2 max-h-1/2 overflow-auto">
         <div class="flex justify-between items-center">
             <div class="flex items-center">
                 <img v-if="items[0].image_path" :src="previewImage" height="50px" width="50px" alt="fish"/>
@@ -29,7 +30,7 @@
 
 <script>
 
-import Arrow from '../assets/arrow'
+import Arrow from './arrow'
 
 export default {
     name: 'ItemTypeCard',
@@ -47,7 +48,7 @@ export default {
     },
     data: function () {
         return {
-            show: false
+            show: false,
         }
     },
     methods: {
