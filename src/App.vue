@@ -10,10 +10,10 @@
       class="mb-4"
       type="Fish"
     />
-    <!-- <ItemTypeCard 
+    <ItemTypeCard 
       class="mb-4"
       type="Bug"
-    /> -->
+    />
   </div>
 </template>
 
