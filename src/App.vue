@@ -36,7 +36,7 @@ export default {
 <style>
   #app {
     padding: 30px;
-    max-height: 100vh;
+    height: 100vh;
   }
 
 </style>

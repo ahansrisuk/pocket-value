@@ -12,6 +12,7 @@ module.exports = {
     colors: {
 
       main: '#726A5F',
+      mustard: '#FEED9F',
       background: '#FFFFF4',
 
       transparent: 'transparent',
