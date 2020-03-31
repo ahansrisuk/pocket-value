@@ -41,6 +41,9 @@ export const store = new Vuex.Store({
         },
         clearValue (state) {
             state.totalValue = 0;
+        },
+        addItemToInventory (state, item) {
+            state.inventory.push(item);
         }
     },
     actions: {

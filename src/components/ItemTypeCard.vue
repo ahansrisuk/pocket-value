@@ -21,7 +21,7 @@
                 </div>
                 <div class="flex items-center">
                     <p class="text-sm">{{ item.value }}</p>
-                    <button class="ml-4 bg-mustard px-2 rounded-lg">+</button>        
+                    <button class="ml-4 bg-mustard px-2 rounded-lg" @click="addItemToInventory(item)">+</button>        
                 </div>
             </div>
         </div>
@@ -54,6 +54,9 @@ export default {
     methods: {
         showHideItems () {
             this.show = !this.show;
+        },
+        addItemToInventory (item) {
+            this.$store.commit('addItemToInventory', item)
         }
     }
 }
