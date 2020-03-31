@@ -13,8 +13,24 @@ const url = 'http://167.99.234.44/api/items/';
 
 export const store = new Vuex.Store({
     state: {
-        items: [],
+        items: [{
+            id: '',
+            name: '',
+            type_id: '',
+            value: '',
+            image_path: '',
+            type: {
+                id: '',
+                name: '',
+            }
+        }],
         totalValue: 0,
+        inventory: []
+    },
+    getters: {
+        getItemsByType: (state) => (type) => {
+            return state.items.filter( item => item.type.name == type);
+        },
     },
     mutations: {
         loadItems (state, items) {
