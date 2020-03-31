@@ -6,7 +6,7 @@
                 <h2 class="ml-4">{{ type }}</h2>
             </div>
             <div @click="showHideItems">
-                <DownArrow />
+                <Arrow />
             </div>
         </div>
         <div v-if="show">
@@ -29,12 +29,12 @@
 
 <script>
 
-import DownArrow from '../assets/down-arrow'
+import Arrow from '../assets/arrow'
 
 export default {
     name: 'ItemTypeCard',
     components: {
-        DownArrow
+        Arrow
     },
     props: ['type'],
     computed: {
