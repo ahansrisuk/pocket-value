@@ -1,6 +1,6 @@
 <template>
     <div 
-        class="border px-2 max-h-1/2 overflow-auto">
+        class="border px-2">
         <div class="flex justify-between items-center">
             <div class="flex items-center">
                 <img v-if="items[0].image_path" :src="previewImage" height="50px" width="50px" alt="fish"/>
@@ -10,7 +10,7 @@
                 <Arrow />
             </div>
         </div>
-        <div v-if="show">
+        <div v-if="show" class="overflow-auto" style="max-height: 400px">
             <div 
                 v-for="item in items" 
                 :key="item.id"
@@ -21,7 +21,7 @@
                 </div>
                 <div class="flex items-center">
                     <p class="text-sm">{{ item.value }}</p>
-                    <button class="ml-4 bg-mustard px-2 rounded-lg" @click="addItemToInventory(item)">+</button>        
+                    <button class="ml-4 mr-1 bg-mustard px-2 rounded-lg" @click="addItemToInventory(item)">+</button>        
                 </div>
             </div>
         </div>

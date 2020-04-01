@@ -35,7 +35,7 @@ export default {
         this.badgeAnimation = 
             this.$anime({
                 targets,
-                duration: 500,
+                duration: 700,
                 scale: [0, 1],
                 autoplay: false
             })
