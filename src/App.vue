@@ -4,9 +4,12 @@
 		<hr class="border-t-2 border-main mt-2">
 		<div class="flex items-center">
 			<SearchBar class="my-8 flex-grow"/>
-			<router-link to="/inventory">
+			<router-link to="/inventory" v-if="onHomePage">
 				<Backpack />
 			</router-link>
+            <router-link to="/" v-else class="ml-2">
+                Back
+            </router-link>
 		</div>
 		<router-view></router-view>
 	</div>
@@ -19,15 +22,20 @@ import SearchBar from './components/SearchBar';
 import Backpack from './components/Backpack';
 
 export default {
-  name: 'App',
-  components: {
-    Header,
-    SearchBar,
-    Backpack
-  },
-  created() {
-    this.$store.dispatch('loadItems');
-  }
+    name: 'App',
+    components: {
+        Header,
+        SearchBar,
+        Backpack
+    },
+    computed: {
+        onHomePage () {
+            return this.$route.path == '/';
+        }
+    },
+    created() {
+        this.$store.dispatch('loadItems');
+    }
 }
 </script>
 

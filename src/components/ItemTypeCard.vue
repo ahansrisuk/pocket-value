@@ -1,6 +1,5 @@
 <template>
-    <div 
-        class="border px-2">
+    <div class="border px-2">
         <div class="flex justify-between items-center">
             <div class="flex items-center">
                 <img v-if="items[0].image_path" :src="previewImage" height="50px" width="50px" alt="fish"/>

@@ -13,6 +13,8 @@ module.exports = {
 
       main: '#726A5F',
       mustard: '#FEED9F',
+      navy: '#1A3850',
+      light: '#D6FCFD',
       background: '#FFFFF4',
 
       transparent: 'transparent',

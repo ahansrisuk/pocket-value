@@ -24,26 +24,27 @@ export const store = new Vuex.Store({
                 name: '',
             }
         }],
-        totalValue: 0,
         inventory: []
     },
     getters: {
         getItemsByType: (state) => (type) => {
             return state.items.filter( item => item.type.name == type);
         },
+        getTotalValue: (state) => {
+            return state.inventory.reduce((total, currentItem) =>  {
+                return total + currentItem.value
+            }, 0)
+        }
     },
     mutations: {
         loadItems (state, items) {
             state.items = items;
         },
-        addValue (state, value) {
-            state.totalValue += value;
-        },
-        clearValue (state) {
-            state.totalValue = 0;
-        },
         addItemToInventory (state, item) {
             state.inventory.push(item);
+        },
+        clearInventory (state) {
+            state.inventory = [];
         }
     },
     actions: {
