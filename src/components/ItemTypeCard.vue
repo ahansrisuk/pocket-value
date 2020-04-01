@@ -9,7 +9,7 @@
                 <Arrow />
             </div>
         </div>
-        <div v-if="show" class="overflow-auto" style="max-height: 400px">
+        <div v-show="open" class="overflow-auto" style="max-height: 400px">
             <div 
                 v-for="item in items" 
                 :key="item.id"
@@ -47,16 +47,19 @@ export default {
     },
     data: function () {
         return {
-            show: false,
+            open: false,
+            openAnimation: {}
         }
     },
     methods: {
         showHideItems () {
-            this.show = !this.show;
+            this.open = !this.open;
+            this.openAnimation.play();
+
         },
         addItemToInventory (item) {
             this.$store.commit('addItemToInventory', item)
         }
-    }
+    },
 }
 </script>
