@@ -1,18 +1,23 @@
 <template>
-	<div id="app">
-		<Header />
-		<hr class="border-t-2 border-main mt-2">
-		<div class="flex items-center">
-			<SearchBar class="my-8 flex-grow"/>
-			<router-link to="/inventory" v-show="onHomePage">
-				<Backpack />
-			</router-link>
-            <router-link to="/" v-show="!onHomePage" class="ml-2">
-                Back
-            </router-link>
-		</div>
-		<router-view></router-view>
-	</div>
+    <div id="app" class="flex flex-col">
+        <div class="flex-grow">
+            <Header />
+            <hr class="border-t-2 border-main mt-2">
+            <div class="flex items-center">
+                <SearchBar class="my-8 flex-grow"/>
+                <router-link to="/inventory" v-show="onHomePage">
+                <Backpack />
+                </router-link>
+                    <router-link to="/" v-show="!onHomePage" class="ml-2">
+                        Back
+                    </router-link>
+            </div>
+            <router-view></router-view>
+        </div>
+        <footer>
+            © 2020, Allen Hansrisuk
+        </footer>
+    </div>
 </template>
 
 <script>
@@ -42,7 +47,10 @@ export default {
 <style>
   #app {
     padding: 30px;
+    padding-bottom: 15px;
     height: 100vh;
+    max-width: 800px;
+    margin: auto;
   }
 
 </style>

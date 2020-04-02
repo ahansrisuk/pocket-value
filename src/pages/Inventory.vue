@@ -6,7 +6,7 @@
         </div>
         <div class="flex justify-around m-2" v-if="inventory.length > 0">
             <div class="rounded-full bg-mustard px-4 py-2" v-if="inventory">
-                <span>{{ totalValue }}</span>
+                <span>{{ totalValue }} bells</span>
             </div>
         </div>
         <div 
