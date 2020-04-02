@@ -6,12 +6,17 @@
                 <input 
                     type="text" 
                     class="bg-background focus:outline-none ml-3 w-full"
-                    v-model="searchInput" 
+                    v-model="searchInput"
                 >
+                <button v-show="searchInput" @click="clearInput" class="px-2">
+                    <img src="../assets/close.svg" alt="close" class="text-main"  />
+                </button>
             </div>
         </div>
-        <div class="overflow-auto absolute bg-background mt-2 border w-full" style="max-height: 400px" v-show="itemSuggestions.length > 0">
-            <Item :item="item" v-for="item in itemSuggestions" :key="item.id"/>
+        <div class="overflow-auto absolute bg-background mt-2 border w-full" style="max-height: 400px" 
+            v-show="itemSuggestions.length > 0"
+            >
+            <Item :item="item" v-for="item in itemSuggestions" :key="item.id" />
         </div>
     </div>
 </template>
@@ -27,7 +32,7 @@ export default {
     },
     data: function () {
         return {
-            searchInput: ''
+            searchInput: '',
         }
     },
     computed: {
@@ -36,6 +41,11 @@ export default {
                 return item.name.toLowerCase().includes(this.searchInput.toLowerCase()) && this.searchInput;
             } )
         },
+    },
+    methods: {
+        clearInput () {
+            this.searchInput = '';
+        }
     },
 }
 </script>
