@@ -14,9 +14,9 @@
             </div>
             <router-view></router-view>
         </div>
-        <footer>
+        <!-- <footer>
             © 2020, Allen Hansrisuk
-        </footer>
+        </footer> -->
     </div>
 </template>
 
