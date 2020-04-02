@@ -9,7 +9,7 @@ import VueAxios from 'vue-axios'
 Vue.use(Vuex)
 Vue.use(VueAxios, axios)
 
-const url = 'http://167.99.234.44/api/items/';
+const url = 'https://167.99.234.44/api/items/';
 
 export const store = new Vuex.Store({
     state: {
