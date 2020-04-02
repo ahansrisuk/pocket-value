@@ -9,7 +9,7 @@ import VueAxios from 'vue-axios'
 Vue.use(Vuex)
 Vue.use(VueAxios, axios)
 
-const url = 'https://pocket-value.com/api/items/';
+const url = 'https://api.pocket-value.com/items/';
 
 export const store = new Vuex.Store({
     state: {
