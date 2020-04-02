@@ -29,7 +29,8 @@ export default {
     name: 'Inventory',
     computed: {
         inventory () {
-            return this.$store.state.inventory;
+            let inv = this.$store.state.inventory;
+            return inv.sort((a, b) => (a.value < b.value) ? 1 : -1); 
         },
         totalValue () {
             return this.$store.getters.getTotalValue;
