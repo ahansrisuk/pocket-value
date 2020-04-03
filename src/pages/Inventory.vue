@@ -18,7 +18,9 @@
                 <p class="text-sm ml-4">{{ item.name }}</p>
             </div>
             <div class="flex items-center">
-                <p class="text-sm">{{ item.value }}</p>
+                <p class="text-sm mr-4">{{ item.value }}</p>
+                <button @click="removeItemFromInventory(index)">
+                    <img src="../assets/close.svg" height="12" width="12"></button>
             </div>
         </div>
     </div>
@@ -39,6 +41,9 @@ export default {
     methods: {
         clearInventory () {
             this.$store.commit('clearInventory');
+        },
+        removeItemFromInventory (itemIndex) {
+            this.$store.commit('removeItemFromInventory', itemIndex);
         }
     }
 }

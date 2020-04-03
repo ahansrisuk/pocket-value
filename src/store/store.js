@@ -43,9 +43,12 @@ export const store = new Vuex.Store({
         addItemToInventory (state, item) {
             state.inventory.push(item);
         },
+        removeItemFromInventory (state, itemIndex) {
+            state.inventory.splice(itemIndex, 1);
+        },
         clearInventory (state) {
             state.inventory = [];
-        }
+        },
     },
     actions: {
         loadItems({ commit }) {

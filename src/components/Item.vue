@@ -21,7 +21,7 @@ export default {
     methods: {
         addItemToInventory (item) {
             this.$store.commit('addItemToInventory', item)
-        }
+        },
     }
 }
 </script>
