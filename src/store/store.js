@@ -16,13 +16,9 @@ export const store = new Vuex.Store({
         items: [{
             id: '',
             name: '',
-            type_id: '',
+            type: '',
             value: '',
             image_path: '',
-            type: {
-                id: '',
-                name: '',
-            }
         }],
         inventory: []
     },
