@@ -28,7 +28,7 @@ export const store = new Vuex.Store({
     },
     getters: {
         getItemsByType: (state) => (type) => {
-            return state.items.filter( item => item.type.name == type);
+            return state.items.filter( item => item.type == type);
         },
         getTotalValue: (state) => {
             return state.inventory.reduce((total, currentItem) =>  {
