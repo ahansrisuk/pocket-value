@@ -1,9 +1,7 @@
 <template>
     <div>
-        <div class="flex w-full items-center justify-between border-main border-t" 
-            @click="showModal = true"
-            >
-            <button class="flex items-center flex-grow outline-none">
+        <div class="flex w-full items-center justify-between border-main border-t">
+            <button class="flex items-center flex-grow outline-none hover:underline" @click="showModal = true">
                 <img :src="item.image_path" height="50px" width="50px" alt="fish"/>
                 <p class="text-sm ml-4">{{ item.name }}</p>
             </button>
