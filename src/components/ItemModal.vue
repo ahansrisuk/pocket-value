@@ -20,16 +20,19 @@
                     <p>{{ item.time }} </p>
                 </div>
             </div>
-                {{ item.northern_months }}
-                {{ item.southern_months }}
+            <AvailableMonths title="Northern Hemisphere" :available-months="item.northern_months" />
+            <AvailableMonths title="Southern Hemisphere" :available-months="item.southern_months" />
         </div>
       
     </div>
 </template>
 
 <script>
+import AvailableMonths from './AvailableMonths';
+
 export default {
     name: 'ItemModal',
+    components: { AvailableMonths },
     props: ['item'],
     methods: {
         addItemToInventory (item) {
