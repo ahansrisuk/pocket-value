@@ -5,7 +5,7 @@
             <span 
                 v-for="(month,index) in months" 
                 :key="index"
-                class="text-xs rounded-lg px-2 mt-4'" 
+                class="text-xs rounded-lg px-2 mt-4" 
                 :class="isAvailable(month)"
                 >
                 {{ abbreviatedMonthName(month) }}
