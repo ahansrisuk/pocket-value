@@ -1,11 +1,11 @@
 <template>
     <div class="mt-4">
         <h3>{{ title }}</h3>
-        <div class="flex justify-between">
+        <div class="flex flex-wrap justify-between">
             <span 
                 v-for="(month,index) in months" 
                 :key="index"
-                class="text-xs rounded-lg px-2 mt-4" 
+                class="text-xs rounded-lg px-2 mt-2 mx-1 w-12 text-center" 
                 :class="isAvailable(month)"
                 >
                 {{ abbreviatedMonthName(month) }}
