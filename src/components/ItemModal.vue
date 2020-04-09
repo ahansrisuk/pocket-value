@@ -1,7 +1,7 @@
 <template>
-    <div class="fixed h-full w-full top-0 right-0 flex">
+    <div class="fixed h-full w-full top-0 right-0 flex z-10">
         <div class="fixed h-full w-full bg-black opacity-50"></div>
-        <div class="bg-background p-4 m-auto z-10 border" style="max-width: 400px">
+        <div class="bg-background p-4 m-auto z-20 border" style="max-width: 400px">
             <div class="flex justify-between items-center">
                 <div class="flex">
                     <h2>{{ item.name }}</h2>
