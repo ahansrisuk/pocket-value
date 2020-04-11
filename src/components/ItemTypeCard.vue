@@ -5,9 +5,9 @@
                 <img v-if="items[0].image_path" :src="previewImage" height="50px" width="50px" alt="fish"/>
                 <h2 class="ml-4">{{ type }}</h2>
             </div>
-            <div @click="open = !open">
+            <button @click="open = !open">
                 <Arrow />
-            </div>
+            </button>
         </div>
         <div v-show="open" class="overflow-auto" style="max-height: 400px">
             <Item :item="item" v-for="item in items" :key="item.id"/>
