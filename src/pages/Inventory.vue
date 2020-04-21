@@ -9,6 +9,9 @@
                 <span>{{ totalValue }} bells</span>
             </div>
         </div>
+        <div class="flex justify-center m-4" v-else>
+            Empty! Items will show here when they are added.
+        </div>
         <Item v-for="(item, index) in inventory" :key="index" :item="item" :removeItemButton="true" />
     </div>
 </template>
