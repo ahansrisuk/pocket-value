@@ -32,9 +32,6 @@ export default {
         clearInventory () {
             this.$store.commit('clearInventory');
         },
-        removeItemFromInventory (itemIndex) {
-            this.$store.commit('removeItemFromInventory', itemIndex);
-        }
     }
 }
 </script>

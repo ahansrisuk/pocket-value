@@ -48,6 +48,9 @@ export default {
         addItemToInventory (item) {
             this.$store.commit('addItemToInventory', item)
         },
+        removeItemFromInventory (itemIndex) {
+            this.$store.commit('removeItemFromInventory', itemIndex);
+        }
     }
 }
 </script>
