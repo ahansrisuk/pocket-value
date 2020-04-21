@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<ItemTypeCard class="mb-4" type="Fish"/>
-		<ItemTypeCard class="mb-4" type="Bug"/>
+		<ItemTypeCard class="mb-4" type="Bugs"/>
 	</div>
 </template>
 
