@@ -7,7 +7,20 @@
             </button>
             <div class="flex items-center">
                 <p class="text-sm">{{ item.value }}</p>
-                <button class="ml-4 mr-1 bg-mustard px-2 rounded-lg" @click="addItemToInventory(item)">+</button>        
+                <button 
+                    class="ml-4 mr-1 bg-mustard px-2 rounded-lg" 
+                    @click="addItemToInventory(item)"
+                    v-if="addItemButton"
+                    >
+                        +
+                </button>
+                <button 
+                    @click="removeItemFromInventory(index)" 
+                    v-if="removeItemButton"
+                    class="mr-2 ml-4"
+                    >
+                    <img src="../assets/close.svg" height="12" width="12">
+                </button>
             </div>
         </div>
         <ItemModal 
@@ -25,7 +38,7 @@ import ItemModal from './ItemModal';
 export default {
     name: 'Item',
     components: { ItemModal },
-    props: ['item'],
+    props: ['item', 'addItemButton', 'removeItemButton'],
     data: function () {
         return {
             showModal: false,

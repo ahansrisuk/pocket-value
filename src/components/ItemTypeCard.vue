@@ -10,7 +10,7 @@
             </button>
         </div>
         <div v-show="open" class="overflow-auto" style="max-height: 400px">
-            <Item :item="item" v-for="item in items" :key="item.id"/>
+            <Item :item="item" v-for="item in items" :key="item.id" :addItemButton="true"/>
         </div>
     </div>
 </template>

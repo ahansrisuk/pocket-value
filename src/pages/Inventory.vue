@@ -9,26 +9,16 @@
                 <span>{{ totalValue }} bells</span>
             </div>
         </div>
-        <div 
-            v-for="(item,index) in inventory" 
-            :key="index"
-            class="flex w-full items-center justify-between border-main border-t p-2">
-            <div class="flex items-center">
-                <img :src="item.image_path" height="50px" width="50px" alt="fish"/>
-                <p class="text-sm ml-4">{{ item.name }}</p>
-            </div>
-            <div class="flex items-center">
-                <p class="text-sm mr-4">{{ item.value }}</p>
-                <button @click="removeItemFromInventory(index)">
-                    <img src="../assets/close.svg" height="12" width="12"></button>
-            </div>
-        </div>
+        <Item v-for="(item, index) in inventory" :key="index" :item="item" :removeItemButton="true" />
     </div>
 </template>
 
 <script>
+import Item from '../components/Item';
+
 export default {
     name: 'Inventory',
+    components: { Item },
     computed: {
         inventory () {
             let inv = this.$store.state.inventory;
