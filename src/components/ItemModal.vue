@@ -13,7 +13,7 @@
             </div>
             <hr class="border-t-2 border-main mt-2">
             <div class="flex items-center mt-2">
-                <img :src="item.image_path" alt="item.name" height="90px" width="90px">
+                <img :src="item.image_path" alt="item.name" height="64px" width="64px">
                 <div class="flex-col flex-grow ml-4">
                     <div class="flex justify-between">
                         <div>
