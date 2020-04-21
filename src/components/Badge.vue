@@ -7,6 +7,8 @@
 </template>
 
 <script>
+
+import anime from 'animejs';
 export default {
     name: 'Backpack',
     data: function () {
@@ -33,7 +35,7 @@ export default {
         const targets = this.$el;
 
         this.badgeAnimation = 
-            this.$anime({
+            anime({
                 targets,
                 duration: 700,
                 scale: [0, 1],

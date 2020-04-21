@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import VueAnime from 'vue-animejs';
 
 // App Pages & Vuex Store
 import App from './App.vue';
@@ -12,7 +11,6 @@ import { store } from './store/store';
 import './assets/tailwind.css';
 
 Vue.use(VueRouter);
-Vue.use(VueAnime);
 
 
 Vue.config.productionTip = false

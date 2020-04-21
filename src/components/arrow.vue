@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import anime from 'animejs';
+
 export default {
     name: 'Arrow',
     data: function () {
@@ -34,7 +36,7 @@ export default {
     mounted() {
         const targets = this.$el;
         this.closeAnimation = 
-            this.$anime({
+            anime({
                 targets,
                 rotateX: [180, 0],
                 easing: 'easeInOutSine',
@@ -42,7 +44,7 @@ export default {
                 autoplay: false,
             })
         this.openAnimation = 
-            this.$anime({
+            anime({
                 targets,
                 rotateX: [0, 180],
                 easing: 'easeInOutSine',
