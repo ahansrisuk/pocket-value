@@ -16,7 +16,7 @@
         <div class="overflow-auto absolute bg-background mt-2 border w-full" style="max-height: 400px" 
             v-show="itemSuggestions.length > 0"
             >
-            <Item :item="item" v-for="item in itemSuggestions" :key="item.id" />
+            <Item :item="item" v-for="item in itemSuggestions" :key="item.id"  :addItemButton="true"/>
         </div>
     </div>
 </template>
