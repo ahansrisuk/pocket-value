@@ -4,7 +4,7 @@
             <Header />
             <hr class="border-t-2 border-main mt-2">
             <div class="flex items-center">
-                <SearchBar class="my-8 flex-grow"/>
+                <SearchBar class="mt-8 mb-4 flex-grow"/>
                 <router-link to="/inventory" v-show="onHomePage">
                 <Backpack />
                 </router-link>
