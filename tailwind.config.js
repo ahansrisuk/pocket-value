@@ -425,7 +425,7 @@ module.exports = {
       full: '100%',
       screen: '100vw',
       'custom-1': '155px',
-      'custom-2': '165px',
+      'custom-2': '170px',
     }),
     zIndex: {
       auto: 'auto',
