@@ -6,12 +6,35 @@
             <div class="flex items-center">
                 <SearchBar class="mt-8 mb-4 flex-grow"/>
                 <router-link to="/inventory" v-show="onHomePage">
-                <Backpack />
+                    <Backpack />
                 </router-link>
-                    <router-link to="/" v-show="!onHomePage" class="ml-2">
-                        Back
-                    </router-link>
+                <router-link to="/" v-show="!onHomePage" class="ml-2">
+                    Back
+                </router-link>
             </div>
+            <section class="flex mb-2 justify-between flex-wrap">
+
+                <HemisphereButton />
+
+                <NavButton 
+                    name="Available Now" 
+                    destination="/available-now"	
+                    >
+                    <img src="./assets/calendar.svg" alt="calendar" height="24px" width="24px" />
+                </NavButton>
+                <NavButton 
+                    name="Outgoing Critters" 
+                    destination="/outgoing-critters"	
+                    >
+                    <img src="./assets/pink.svg" alt="pink circle" height="24px" width="24px" class="p-1" />
+                </NavButton>
+                <NavButton 
+                    name="Incoming Critters" 
+                    destination="/incoming-critters"	
+                    >
+                    <img src="./assets/blue.svg" alt="blue circle" height="24px" width="24px" class="p-1" />
+                </NavButton>
+            </section>
             <router-view></router-view>
         </div>
         <!-- <footer>
@@ -25,13 +48,17 @@
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Backpack from './components/Backpack';
+import NavButton from './components/NavButton';
+import HemisphereButton from './components/HemisphereButton';
 
 export default {
     name: 'App',
     components: {
         Header,
         SearchBar,
-        Backpack
+        Backpack,
+        NavButton,
+        HemisphereButton
     },
     computed: {
         onHomePage () {

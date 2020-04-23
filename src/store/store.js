@@ -20,7 +20,8 @@ export const store = new Vuex.Store({
             value: '',
             image_path: '',
         }],
-        inventory: []
+        inventory: [],
+        hemisphere: 'North Hemisphere'
     },
     getters: {
         getItemsByType: (state) => (type) => {
@@ -44,6 +45,9 @@ export const store = new Vuex.Store({
         },
         clearInventory (state) {
             state.inventory = [];
+        },
+        changeHemisphere (state, value) {
+            state.hemisphere = value;
         },
     },
     actions: {
