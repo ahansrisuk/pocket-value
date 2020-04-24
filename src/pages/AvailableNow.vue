@@ -16,7 +16,8 @@ export default {
     components: { Item },
     computed: {
         currentlyAvailableItems() {
-
+            const date = new Date();
+            return this.$store.getters.getAvailableItems(date.getMonth());
         }
     },
     methods: {

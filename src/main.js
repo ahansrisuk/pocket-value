@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 import App from './App.vue';
 import Home from './pages/Home';
 import Inventory from './pages/Inventory';
+import AvailableNow from './pages/AvailableNow';
 import { store } from './store/store';
 
 // CSS
@@ -18,6 +19,7 @@ Vue.config.productionTip = false
 const routes = [
   { path: '/', component: Home },
   { path: '/inventory', component: Inventory },
+  { path: '/available-now', component: AvailableNow }
   // { path: '/about', component: About },
 
 ]

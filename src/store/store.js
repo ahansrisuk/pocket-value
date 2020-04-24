@@ -26,6 +26,9 @@ const months = [
     'December'
 ]
 
+const date = new Date();
+const month = date.getMonth();
+
 export const store = new Vuex.Store({
     state: {
         items: [{
@@ -36,6 +39,8 @@ export const store = new Vuex.Store({
             image_path: '',
             northern_months: '',
             southern_months: '',
+            outgoing: false,
+            incoming: false,
         }],
         inventory: [],
         hemisphere: 'North Hemisphere'
@@ -53,7 +58,17 @@ export const store = new Vuex.Store({
             return state.items.filter( item => {
                 return isAvailable(state, item, month)
             })
-        }
+        },
+        getOutgoingItems: (state) => {
+            return state.items.filter( item => {
+                return isOutgoing(state, item, month)
+            })
+        },
+        getIncomingItems: (state) => {
+            return state.items.filter( item => {
+                return isIncoming(state, item, month)
+            })
+        },
     },
     mutations: {
         // actions should be used to call mutations if async is needed
@@ -85,10 +100,25 @@ export const store = new Vuex.Store({
 });
 
 // helper methods
+
 function isAvailable (state, item, month) {
     if (state.hemisphere == 'North Hemisphere') {
         return item.northern_months.includes(months[month])
     } else {
         return item.southern_months.includes(months[month])
+    }
+}
+
+function isOutgoing (state, item, month) {
+    if (isAvailable(state, item, month) && !isAvailable(state, item, month + 1)) {
+        item.outgoing = true;
+        return true;
+    }
+}
+
+function isIncoming (state, item, month) {
+    if (!isAvailable(state, item, month) && isAvailable(state, item, month + 1)) {
+        item.incoming = true;
+        return true;
     }
 }
