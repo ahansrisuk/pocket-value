@@ -74,6 +74,10 @@ export const store = new Vuex.Store({
         // actions should be used to call mutations if async is needed
         loadItems (state, items) {
             state.items = items;
+            state.items.forEach(item => {
+                Vue.set(item, 'outgoing', false);
+                Vue.set(item, 'incoming', false);
+            });
         },
         addItemToInventory (state, item) {
             state.inventory.push(item);

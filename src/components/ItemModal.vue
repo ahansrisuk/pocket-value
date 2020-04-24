@@ -5,6 +5,8 @@
             <div class="flex justify-between items-center">
                 <div class="flex">
                     <h2>{{ item.name }}</h2>
+                    <img v-if="item.incoming" src="../assets/blue.svg" class="ml-1" height="14px" width="14px" />
+                    <img v-if="item.outgoing" src="../assets/pink.svg" class="ml-1" height="14px" width="14px" />
                     <button class="ml-4 bg-mustard px-3 rounded-lg text-xl" @click="addItemToInventory(item)">+</button>
                 </div>
                 <button class="px-4" @click="$emit('close-modal')">

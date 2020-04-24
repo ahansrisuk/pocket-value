@@ -4,6 +4,8 @@
             <button class="flex items-center flex-grow outline-none hover:underline" @click="showModal = true">
                 <img :src="item.image_path" height="50px" width="50px" alt="fish"/>
                 <p class="text-sm ml-4 text-left">{{ item.name }}</p>
+                <img v-if="item.incoming" src="../assets/blue.svg" class="ml-1" height="10px" width="10px" />
+                <img v-if="item.outgoing" src="../assets/pink.svg" class="ml-1" height="10px" width="10px" />
             </button>
             <div class="flex items-center">
                 <p class="text-sm">{{ item.value }}</p>

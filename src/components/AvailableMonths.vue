@@ -1,6 +1,6 @@
 <template>
     <div class="mt-4">
-        <h3>{{ title }}</h3>
+        <h3>Months Available</h3>
         <div class="flex flex-wrap justify-between">
             <span 
                 v-for="(month,index) in months" 

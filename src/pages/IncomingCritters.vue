@@ -1,6 +1,6 @@
 <template>
     <section class="border">
-        <PageHeader title="Incoming Critters" />
+        <PageHeader title="Incoming Critters Next Month" />
         <Item v-for="item in incomingCritters" :key="item.id"
             :item="item"
             :addItemButton="true"

@@ -16,8 +16,5 @@ export default {
   components: {
 	ItemTypeCard,
   },
-  created() {
-    this.$store.dispatch('loadItems');
-  }
 }
 </script>
