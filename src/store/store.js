@@ -112,12 +112,14 @@ function isAvailable (state, item, month) {
 function isOutgoing (state, item, month) {
     if (isAvailable(state, item, month) && !isAvailable(state, item, month + 1)) {
         item.outgoing = true;
+        item.incoming = false;
         return true;
     }
 }
 
 function isIncoming (state, item, month) {
     if (!isAvailable(state, item, month) && isAvailable(state, item, month + 1)) {
+        item.outgoing = false;
         item.incoming = true;
         return true;
     }

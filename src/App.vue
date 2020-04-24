@@ -74,7 +74,6 @@ export default {
 <style>
   #app {
     padding: 30px;
-    padding-bottom: 15px;
     height: 100vh;
     max-width: 800px;
     margin: auto;
