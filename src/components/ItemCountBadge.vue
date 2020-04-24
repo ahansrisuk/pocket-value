@@ -10,7 +10,7 @@
 
 import anime from 'animejs';
 export default {
-    name: 'Backpack',
+    name: 'ItemCountBadge',
     data: function () {
         return {
             badgeAnimation: ''

@@ -11,6 +11,21 @@ Vue.use(VueAxios, axios)
 
 const url = 'https://api.pocket-value.com/items/';
 
+const months = [
+    'January',
+    'Feburary',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+]
+
 export const store = new Vuex.Store({
     state: {
         items: [{
@@ -19,6 +34,8 @@ export const store = new Vuex.Store({
             type: '',
             value: '',
             image_path: '',
+            northern_months: '',
+            southern_months: '',
         }],
         inventory: [],
         hemisphere: 'North Hemisphere'
@@ -31,9 +48,15 @@ export const store = new Vuex.Store({
             return state.inventory.reduce((total, currentItem) =>  {
                 return total + currentItem.value
             }, 0)
+        },
+        getAvailableItems: (state) => (month) => {
+            return state.items.filter( item => {
+                return isAvailable(state, item, month)
+            })
         }
     },
     mutations: {
+        // actions should be used to call mutations if async is needed
         loadItems (state, items) {
             state.items = items;
         },
@@ -58,5 +81,14 @@ export const store = new Vuex.Store({
             throw new Error(`API ${error}`);
           });
         }
-      },
+    },
 });
+
+// helper methods
+function isAvailable (state, item, month) {
+    if (state.hemisphere == 'North Hemisphere') {
+        return item.northern_months.includes(months[month])
+    } else {
+        return item.southern_months.includes(months[month])
+    }
+}
