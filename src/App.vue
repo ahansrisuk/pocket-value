@@ -5,11 +5,8 @@
             <hr class="border-t-2 border-main mt-2">
             <div class="flex items-center">
                 <SearchBar class="mt-8 mb-4 flex-grow"/>
-                <router-link to="/inventory" v-show="onHomePage">
+                <router-link to="/inventory">
                     <Backpack />
-                </router-link>
-                <router-link to="/" v-show="!onHomePage" class="ml-2">
-                    Back
                 </router-link>
             </div>
             <section class="flex mb-2 justify-between flex-wrap">
@@ -35,6 +32,13 @@
                     <img src="./assets/blue.svg" alt="blue circle" height="24px" width="24px" class="p-1" />
                 </NavButton>
             </section>
+            
+            <div class="mb-2" v-if="!onHomePage">
+                <router-link to="/" class="flex">
+                    <img src="./assets/back-arrow.svg" alt="back arrow" height="20px" width="20px" />
+                    <span class="ml-2">Back</span>
+                </router-link>
+            </div>
             <router-view></router-view>
         </div>
         <!-- <footer>
