@@ -77,6 +77,8 @@ export const store = new Vuex.Store({
             state.items.forEach(item => {
                 Vue.set(item, 'outgoing', false);
                 Vue.set(item, 'incoming', false);
+                isOutgoing(state, item, month);
+                isIncoming(state, item, month);
             });
         },
         addItemToInventory (state, item) {
@@ -90,6 +92,12 @@ export const store = new Vuex.Store({
         },
         changeHemisphere (state, value) {
             state.hemisphere = value;
+            state.items.forEach(item => {
+                if (!isOutgoing(state, item, month) && !isIncoming(state, item, month)) {
+                    item.incoming = false;
+                    item.outgoing = false;
+                }
+            });
         },
     },
     actions: {
