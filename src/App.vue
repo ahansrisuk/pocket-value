@@ -4,14 +4,14 @@
             <Header />
             <hr class="border-t-2 border-main mt-2">
             <div class="flex items-center">
-                <SearchBar class="mt-8 mb-4 flex-grow"/>
+                <SearchBar class="mt-8 mb-4 flex-grow z-10"/>
                 <router-link to="/inventory">
                     <Backpack />
                 </router-link>
             </div>
             <section class="flex mb-2 justify-between flex-wrap">
 
-                <HemisphereButton />
+                <HemisphereButton  class="z-0"/>
 
                 <NavButton 
                     name="Available Now" 
