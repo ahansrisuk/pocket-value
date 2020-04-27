@@ -35,8 +35,8 @@
                     </div>
                 </div>
             </div>
-            <AvailableMonths title="Northern Hemisphere" :available-months="item.northern_months" />
-            <AvailableMonths title="Southern Hemisphere" :available-months="item.southern_months" />
+            <AvailableMonths v-if="hemisphere == 'North Hemisphere'" title="Northern Hemisphere" :available-months="item.northern_months" />
+            <AvailableMonths v-if="hemisphere == 'South Hemisphere'" title="Southern Hemisphere" :available-months="item.southern_months" />
         </div>
       
     </div>
@@ -49,6 +49,11 @@ export default {
     name: 'ItemModal',
     components: { AvailableMonths },
     props: ['item'],
+    computed: {
+        hemisphere () {
+            return this.$store.state.hemisphere;
+        }
+    },
     methods: {
         addItemToInventory (item) {
             this.$store.commit('addItemToInventory', item)
