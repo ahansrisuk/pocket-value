@@ -16,6 +16,8 @@ module.exports = {
       navy: '#1A3850',
       light: '#D6FCFD',
       background: '#FFFFF4',
+      outgoing: '#F8A8B1',
+      incoming: '#8A9CF2',
 
       transparent: 'transparent',
 

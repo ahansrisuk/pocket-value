@@ -33,6 +33,11 @@
                             <p>{{ item.location }}</p>
                         </div>
                     </div>
+                    <div class="mt-2">
+                        <IncomingBadge v-if="item.incoming"/>
+                        <OutgoingBadge v-if="item.outgoing"/>
+                    </div>
+                    
                 </div>
             </div>
             <AvailableMonths v-if="hemisphere == 'North Hemisphere'" title="Northern Hemisphere" :available-months="item.northern_months" />
@@ -44,10 +49,16 @@
 
 <script>
 import AvailableMonths from './AvailableMonths';
+import IncomingBadge from './IncomingBadge';
+import OutgoingBadge from './OutgoingBadge';
 
 export default {
     name: 'ItemModal',
-    components: { AvailableMonths },
+    components: { 
+        AvailableMonths, 
+        IncomingBadge,
+        OutgoingBadge
+    },
     props: ['item'],
     computed: {
         hemisphere () {
