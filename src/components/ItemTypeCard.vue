@@ -1,6 +1,6 @@
 <template>
     <div class="border px-2 flex flex-col">
-        <button @click="handleClick" class="w-full flex justify-between items-center" >
+        <button @click="handleClick" class="w-full flex justify-between items-center focus:outline-none" >
             <div class="flex items-center">
                 <img v-if="items[0].image_path" :src="previewImage" height="50px" width="50px" alt="fish"/>
                 <h2 class="ml-4">{{ type }}</h2>
