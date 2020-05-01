@@ -1,13 +1,11 @@
 <template>
     <div class="border px-2 flex flex-col">
-        <button @click="handleClick" class="w-full">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <img v-if="items[0].image_path" :src="previewImage" height="50px" width="50px" alt="fish"/>
-                    <h2 class="ml-4">{{ type }}</h2>
-                </div>
-                <Arrow class="arrow" />
+        <button @click="handleClick" class="w-full flex justify-between items-center" >
+            <div class="flex items-center">
+                <img v-if="items[0].image_path" :src="previewImage" height="50px" width="50px" alt="fish"/>
+                <h2 class="ml-4">{{ type }}</h2>
             </div>
+            <Arrow class="arrow" />
         </button>
         <div v-show="open" class="overflow-auto" style="max-height: 400px">
             <Item :item="item" v-for="item in items" :key="item.id" :addItemButton="true"/>
@@ -46,9 +44,9 @@ export default {
     methods: {
         handleClick (e) {
             if (!this.open) {
-                this.openArrow(e.target.querySelector('.arrow'));
+                this.openArrow(e.currentTarget.querySelector('.arrow'));
             } else {
-                this.closeArrow(e.target.querySelector('.arrow'));
+                this.closeArrow(e.currentTarget.querySelector('.arrow'));
 
             }
             this.open = !this.open;
