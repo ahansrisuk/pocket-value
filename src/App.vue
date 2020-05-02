@@ -41,9 +41,7 @@
             </div>
             <router-view></router-view>
         </div>
-        <!-- <footer>
-            © 2020, Allen Hansrisuk
-        </footer> -->
+        <Footer />
     </div>
 </template>
 
@@ -54,6 +52,7 @@ import SearchBar from './components/SearchBar';
 import Backpack from './components/Backpack';
 import NavButton from './components/NavButton';
 import HemisphereButton from './components/HemisphereButton';
+import Footer from './components/Footer';
 
 export default {
     name: 'App',
@@ -62,7 +61,8 @@ export default {
         SearchBar,
         Backpack,
         NavButton,
-        HemisphereButton
+        HemisphereButton,
+        Footer
     },
     computed: {
         onHomePage () {
