@@ -101,9 +101,10 @@ export const store = new Vuex.Store({
         changeHemisphere (state, value) {
             state.hemisphere = value;
             state.items.forEach(item => {
-                if (!isOutgoing(state, item, month) && !isIncoming(state, item, month)) {
+                if (!isOutgoing(state, item, month) && !isIncoming(state, item, month) && !isNew(state, item, month)) {
                     item.incoming = false;
                     item.outgoing = false;
+                    item.new = false;
                 }
             });
         },
