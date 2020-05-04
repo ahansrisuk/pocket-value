@@ -1,9 +1,6 @@
 <template>
-<router-link :to="destination"> 
-    <div class="flex px-3 items-center">
-        <span class="text-xs mr-2">{{ name }}</span>
-        <slot></slot>
-    </div>
+<router-link :to="destination" class="text-white rounded-full mb-2 w-24 h-6 flex items-center justify-around"> 
+    <span class="text-xs">{{ name }}</span>
 </router-link>
 </template>
 

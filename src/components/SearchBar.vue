@@ -1,6 +1,6 @@
 <template>
     <div class="relative">
-        <div class="border">
+        <div class="border-custom">
             <div class="flex p-1">
                 <img src="../assets/search.svg" alt="search" />
                 <input 

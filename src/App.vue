@@ -9,28 +9,36 @@
                     <Backpack />
                 </router-link>
             </div>
-            <section class="flex mb-2 justify-between flex-wrap">
+            <section class="flex flex-wrap justify-between">
+                    <HemisphereButton  class="z-0"/>
 
-                <HemisphereButton  class="z-0"/>
+                    <NavButton 
+                        name="Available Now" 
+                        destination="/available-now"
+                        class="border-2 border-main rounded-full mb-2 h-8"
+                        >
+                        <img src="./assets/calendar.svg" alt="calendar" height="24px" width="24px" />
+                    </NavButton>
 
-                <NavButton 
-                    name="Available Now" 
-                    destination="/available-now"	
-                    >
-                    <img src="./assets/calendar.svg" alt="calendar" height="24px" width="24px" />
-                </NavButton>
-                <NavButton 
-                    name="Outgoing Critters" 
-                    destination="/outgoing-critters"	
-                    >
-                    <img src="./assets/pink.svg" alt="pink circle" height="24px" width="24px" class="p-1" />
-                </NavButton>
-                <NavButton 
-                    name="Incoming Critters" 
-                    destination="/incoming-critters"	
-                    >
-                    <img src="./assets/blue.svg" alt="blue circle" height="24px" width="24px" class="p-1" />
-                </NavButton>
+                    <PillButton
+                        name="New" 
+                        destination="/new-critters"
+                        class="bg-new"	
+                        >
+                    </PillButton>
+                    <PillButton
+                        name="Outgoing" 
+                        destination="/outgoing-critters"
+                        class="bg-outgoing"	
+                        >
+                    </PillButton>
+                    <PillButton
+                        name="Incoming" 
+                        destination="/incoming-critters"	
+                        class="bg-incoming"
+                        >
+                        <img src="./assets/blue.svg" alt="blue circle" height="24px" width="24px" class="p-1" />
+                    </PillButton>
             </section>
             
             <div class="mb-2" v-if="!onHomePage">
@@ -52,6 +60,7 @@ import SearchBar from './components/SearchBar';
 import Backpack from './components/Backpack';
 import NavButton from './components/NavButton';
 import HemisphereButton from './components/HemisphereButton';
+import PillButton from './components/PillButton';
 import Footer from './components/Footer';
 
 export default {
@@ -62,6 +71,7 @@ export default {
         Backpack,
         NavButton,
         HemisphereButton,
+        PillButton,
         Footer
     },
     computed: {

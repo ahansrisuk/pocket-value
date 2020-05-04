@@ -18,6 +18,7 @@ module.exports = {
       background: '#FFFFF4',
       outgoing: '#F8A8B1',
       incoming: '#8A9CF2',
+      new: '#8AC58A',
 
       transparent: 'transparent',
 

@@ -20,6 +20,6 @@ h2 {
 
 @tailwind utilities;
 
-.border {
+.border-custom {
     @apply border-main border-2 rounded-lg;
 }

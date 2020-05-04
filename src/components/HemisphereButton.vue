@@ -1,11 +1,11 @@
 <template>
 <button @click="changeHemisphere" class="mb-2 focus:outline-none">
-    <div class="border rounded flex px-2 py-1 items-center justify-between w-custom-1 md:w-custom-2">
+    <div class="border-2 border-main rounded-full flex px-2 items-center">
         <transition @enter="enter" @leave="leave" :css="false" mode="out-in">
             <span class="text-xs" v-if="northHemisphere" key="north">North Hemisphere</span>
             <span class="text-xs" v-else key="south" >South Hemisphere</span>
         </transition>
-        <img src="../assets/location-icon.svg" alt="pin" height="24px" width="24px"/>
+        <img src="../assets/location-icon.svg" alt="pin" height="24px" width="24px" class="ml-2"/>
     </div>
 </button>
 </template>
