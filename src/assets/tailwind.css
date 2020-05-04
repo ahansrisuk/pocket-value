@@ -1,25 +1,24 @@
 @tailwind base;
 
 body {
-    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-    color: #726A5F;
-    height: 100%;
-    background-color: #FFFFF4;
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+  color: #726a5f;
+  height: 100%;
+  background-color: #fffff4;
 }
 
 h1 {
-    @apply text-4xl;
+  @apply text-4xl;
 }
 
 h2 {
-    @apply text-xl;
+  @apply text-xl;
 }
 
 @tailwind components;
 
-
 @tailwind utilities;
 
 .border-custom {
-    @apply border-main border-2 rounded-lg;
+  @apply border-main border-2 rounded-lg;
 }

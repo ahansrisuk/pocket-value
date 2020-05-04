@@ -16,8 +16,7 @@ import './assets/tailwind.css';
 
 Vue.use(VueRouter);
 
-
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 const routes = [
   { path: '/', component: Home },
@@ -26,15 +25,14 @@ const routes = [
   { path: '/outgoing-critters', component: OutgoingCritters },
   { path: '/incoming-critters', component: IncomingCritters },
   { path: '/new-critters', component: NewCritters },
-
-]
+];
 
 const router = new VueRouter({
-  routes // short for `routes: routes`
-})
+  routes, // short for `routes: routes`
+});
 
 new Vue({
-  render: h => h(App),
+  render: (h) => h(App),
   store,
   router,
-}).$mount('#app')
+}).$mount('#app');

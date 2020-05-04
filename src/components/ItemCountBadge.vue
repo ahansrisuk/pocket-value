@@ -1,46 +1,44 @@
 <template>
-    <div v-show="itemsCount">
-        <span class="text-sm">
-            {{ itemsCount }}
-        </span>
-    </div>
+  <div v-show="itemsCount">
+    <span class="text-sm">
+      {{ itemsCount }}
+    </span>
+  </div>
 </template>
 
 <script>
-
 import anime from 'animejs';
 export default {
-    name: 'ItemCountBadge',
-    data: function () {
-        return {
-            badgeAnimation: ''
-        }
+  name: 'ItemCountBadge',
+  data: function () {
+    return {
+      badgeAnimation: '',
+    };
+  },
+  computed: {
+    itemsCount() {
+      return this.$store.state.inventory.length;
     },
-    computed: {
-        itemsCount () {
-            return this.$store.state.inventory.length;
-        }
+  },
+  methods: {
+    handleChange() {
+      this.badgeAnimation.restart();
     },
-    methods: {
-        handleChange () {
-            this.badgeAnimation.restart();
-        }
+  },
+  watch: {
+    itemsCount() {
+      this.handleChange();
     },
-    watch: {
-        itemsCount () {
-            this.handleChange()
-        }
-    },
-    mounted () {
-        const targets = this.$el;
+  },
+  mounted() {
+    const targets = this.$el;
 
-        this.badgeAnimation = 
-            anime({
-                targets,
-                duration: 700,
-                scale: [0, 1],
-                autoplay: false
-            })
-    }
-}
+    this.badgeAnimation = anime({
+      targets,
+      duration: 700,
+      scale: [0, 1],
+      autoplay: false,
+    });
+  },
+};
 </script>

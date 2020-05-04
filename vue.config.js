@@ -1,8 +1,8 @@
-const { theme } = require("./tailwind.config");
+const { theme } = require('./tailwind.config');
 
 module.exports = {
   pwa: {
-    name: "Pocket Value",
+    name: 'Pocket Value',
     themeColor: theme.colors.background,
     msTileColor: theme.colors.background,
     manifestOptions: {

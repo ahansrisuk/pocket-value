@@ -1,20 +1,19 @@
 <template>
-<div>
+  <div>
     <section>
-		<ItemTypeCard class="mb-4" type="Fish"/>
-		<ItemTypeCard class="mb-4" type="Bugs"/>
+      <ItemTypeCard class="mb-4" type="Fish" />
+      <ItemTypeCard class="mb-4" type="Bugs" />
     </section>
-</div>
+  </div>
 </template>
 
 <script>
-
 import ItemTypeCard from '../components/ItemTypeCard';
 
 export default {
   name: 'App',
   components: {
-	ItemTypeCard,
+    ItemTypeCard,
   },
-}
+};
 </script>
