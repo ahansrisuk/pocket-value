@@ -5,7 +5,7 @@
             <span class="text-xs" v-if="northHemisphere" key="north">North Hemisphere</span>
             <span class="text-xs" v-else key="south" >South Hemisphere</span>
         </transition>
-        <img src="../assets/location-icon.svg" alt="pin" height="24px" width="24px" class="ml-2"/>
+        <img src="../../assets/location-icon.svg" alt="pin" height="24px" width="24px" class="ml-2"/>
     </div>
 </button>
 </template>

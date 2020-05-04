@@ -59,9 +59,9 @@
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Backpack from './components/Backpack';
-import NavButton from './components/NavButton';
-import HemisphereButton from './components/HemisphereButton';
-import PillButton from './components/PillButton';
+import NavButton from './components/buttons/NavButton';
+import HemisphereButton from './components/buttons/HemisphereButton';
+import PillButton from './components/buttons/PillButton';
 import Footer from './components/Footer';
 
 export default {
