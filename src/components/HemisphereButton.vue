@@ -1,6 +1,6 @@
 <template>
-<button @click="changeHemisphere" class="mb-2 focus:outline-none">
-    <div class="border-2 border-main rounded-full flex px-2 items-center">
+<button @click="changeHemisphere" class="mb-2 focus:outline-none w-40">
+    <div class="border-2 border-main rounded-full flex py-1 px-3 items-center justify-between">
         <transition @enter="enter" @leave="leave" :css="false" mode="out-in">
             <span class="text-xs" v-if="northHemisphere" key="north">North Hemisphere</span>
             <span class="text-xs" v-else key="south" >South Hemisphere</span>

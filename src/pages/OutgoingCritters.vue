@@ -1,5 +1,5 @@
 <template>
-    <section class="border overflow-auto">
+    <section class="border-custom overflow-auto">
         <PageHeader title="Outgoing Critters This Month" />
         <Item v-for="item in outgoingCritters" :key="item.id"
             :item="item"

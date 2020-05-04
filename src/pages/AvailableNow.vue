@@ -1,5 +1,5 @@
 <template>
-    <section class="border">
+    <section class="border-custom">
         <PageHeader title="Available Now" />
         <Item v-for="item in currentlyAvailableItems" :key="item.id"
             :item="item"

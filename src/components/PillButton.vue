@@ -1,5 +1,5 @@
 <template>
-<router-link :to="destination" class="text-white rounded-full mb-2 w-24 h-6 flex items-center justify-around"> 
+<router-link :to="destination" class="text-white rounded-full mb-2 w-24 py-1 flex items-center justify-around"> 
     <span class="text-xs">{{ name }}</span>
 </router-link>
 </template>

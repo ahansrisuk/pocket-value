@@ -9,36 +9,37 @@
                     <Backpack />
                 </router-link>
             </div>
-            <section class="flex flex-wrap justify-between">
-                    <HemisphereButton  class="z-0"/>
+            <section class="flex flex-wrap justify-between items-center mb-4">
+                    
+                <HemisphereButton  class="z-0"/>
 
-                    <NavButton 
-                        name="Available Now" 
-                        destination="/available-now"
-                        class="border-2 border-main rounded-full mb-2 h-8"
-                        >
-                        <img src="./assets/calendar.svg" alt="calendar" height="24px" width="24px" />
-                    </NavButton>
+                <NavButton 
+                    name="Available Now" 
+                    destination="/available-now"
+                    class="border-2 border-main rounded-full mb-2 flex justify-center px-4 py-1"
+                    >
+                    <img src="./assets/calendar.svg" alt="calendar" height="24px" width="24px" />
+                </NavButton>
 
-                    <PillButton
-                        name="New" 
-                        destination="/new-critters"
-                        class="bg-new"	
-                        >
-                    </PillButton>
-                    <PillButton
-                        name="Outgoing" 
-                        destination="/outgoing-critters"
-                        class="bg-outgoing"	
-                        >
-                    </PillButton>
-                    <PillButton
-                        name="Incoming" 
-                        destination="/incoming-critters"	
-                        class="bg-incoming"
-                        >
-                        <img src="./assets/blue.svg" alt="blue circle" height="24px" width="24px" class="p-1" />
-                    </PillButton>
+                <PillButton
+                    name="New" 
+                    destination="/new-critters"
+                    class="bg-new"	
+                    >
+                </PillButton>
+                <PillButton
+                    name="Outgoing" 
+                    destination="/outgoing-critters"
+                    class="bg-outgoing"	
+                    >
+                </PillButton>
+                <PillButton
+                    name="Incoming" 
+                    destination="/incoming-critters"	
+                    class="bg-incoming"
+                    >
+                    <img src="./assets/blue.svg" alt="blue circle" height="24px" width="24px" class="p-1" />
+                </PillButton>
             </section>
             
             <div class="mb-2" v-if="!onHomePage">

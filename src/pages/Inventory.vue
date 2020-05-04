@@ -1,5 +1,5 @@
 <template>
-    <div class="border">
+    <div class="border-custom">
         <div class="flex justify-between items-center bg-navy p-2">
             <h2 class="text-light">My Pocket</h2>
             <button class="text-xs text-light" @click="clearInventory">Clear</button>

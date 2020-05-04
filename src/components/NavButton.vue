@@ -1,6 +1,6 @@
 <template>
 <router-link :to="destination"> 
-    <div class="flex px-3 items-center">
+    <div class="flex items-center">
         <span class="text-xs mr-2">{{ name }}</span>
         <slot></slot>
     </div>
