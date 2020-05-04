@@ -1,7 +1,7 @@
 <template>
     <section class="border-custom">
-        <PageHeader title="Incoming Critters Next Month" />
-        <Item v-for="item in incomingCritters" :key="item.id"
+        <PageHeader title="New Critters this Month" />
+        <Item v-for="item in newCritters" :key="item.id"
             :item="item"
             :addItemButton="true"
             class="px-2"
@@ -15,11 +15,11 @@ import Item from '../components/Item';
 import PageHeader from '../components/PageHeader';
 
 export default {
-    name:'AvailableNow',
+    name:'NewCritters',
     components: { Item, PageHeader },
     computed: {
-        incomingCritters() {
-            return this.$store.getters.getIncomingItems;
+        newCritters() {
+            return this.$store.getters.getNewItems;
         }
     },
 }

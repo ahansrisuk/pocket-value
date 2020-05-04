@@ -23,8 +23,5 @@ export default {
             return this.$store.getters.getAvailableItems(date.getMonth());
         }
     },
-    methods: {
-
-    }
 }
 </script>

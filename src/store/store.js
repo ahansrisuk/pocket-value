@@ -41,6 +41,7 @@ export const store = new Vuex.Store({
             southern_months: '',
             outgoing: false,
             incoming: false,
+            new: false,
         }],
         inventory: [],
         hemisphere: 'North Hemisphere'
@@ -69,6 +70,11 @@ export const store = new Vuex.Store({
                 return isIncoming(state, item, month)
             })
         },
+        getNewItems: (state) => {
+            return state.items.filter(item => {
+                return isNew(state, item, month)
+            })
+        }
     },
     mutations: {
         // actions should be used to call mutations if async is needed
@@ -77,8 +83,10 @@ export const store = new Vuex.Store({
             state.items.forEach(item => {
                 Vue.set(item, 'outgoing', false);
                 Vue.set(item, 'incoming', false);
+                Vue.set(item, 'new', false);
                 isOutgoing(state, item, month);
                 isIncoming(state, item, month);
+                isNew(state, item, month);
             });
         },
         addItemToInventory (state, item) {
@@ -125,6 +133,7 @@ function isOutgoing (state, item, month) {
     if (isAvailable(state, item, month) && !isAvailable(state, item, month + 1)) {
         item.outgoing = true;
         item.incoming = false;
+        item.new = false;
         return true;
     }
 }
@@ -133,6 +142,16 @@ function isIncoming (state, item, month) {
     if (!isAvailable(state, item, month) && isAvailable(state, item, month + 1)) {
         item.outgoing = false;
         item.incoming = true;
+        item.new = false;
+        return true;
+    }
+}
+
+function isNew (state, item, month) {
+    if (!isAvailable(state, item, month - 1) && isAvailable(state, item, month)) {
+        item.outgoing = false;
+        item.incoming = false;
+        item.new = true;
         return true;
     }
 }

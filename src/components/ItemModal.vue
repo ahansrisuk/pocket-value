@@ -36,6 +36,7 @@
                     <div class="mt-2">
                         <IncomingBadge v-if="item.incoming"/>
                         <OutgoingBadge v-if="item.outgoing"/>
+                        <NewBadge v-if="item.new"/>
                     </div>
                     
                 </div>
@@ -50,6 +51,7 @@
 <script>
 import AvailableMonths from './AvailableMonths';
 import IncomingBadge from './IncomingBadge';
+import NewBadge from './NewBadge';
 import OutgoingBadge from './OutgoingBadge';
 
 export default {
@@ -57,7 +59,8 @@ export default {
     components: { 
         AvailableMonths, 
         IncomingBadge,
-        OutgoingBadge
+        OutgoingBadge,
+        NewBadge,
     },
     props: ['item'],
     computed: {

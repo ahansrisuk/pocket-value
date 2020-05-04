@@ -8,6 +8,7 @@ import Inventory from './pages/Inventory';
 import AvailableNow from './pages/AvailableNow';
 import OutgoingCritters from './pages/OutgoingCritters';
 import IncomingCritters from './pages/IncomingCritters';
+import NewCritters from './pages/NewCritters';
 import { store } from './store/store';
 
 // CSS
@@ -24,6 +25,7 @@ const routes = [
   { path: '/available-now', component: AvailableNow },
   { path: '/outgoing-critters', component: OutgoingCritters },
   { path: '/incoming-critters', component: IncomingCritters },
+  { path: '/new-critters', component: NewCritters },
 
 ]
 
