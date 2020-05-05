@@ -20,11 +20,19 @@
             width="14px"
           />
           <button
-            class="ml-4 bg-mustard px-3 rounded-lg text-xl"
+            class="mx-2 bg-mustard px-3 rounded-lg text-xl"
             @click="addItemToInventory(item)"
           >
             +
           </button>
+          <transition @enter="enter" @leave="leave" :css="false">
+            <span
+              v-if="addingItem"
+              class="bg-mustard text-xs flex items-center rounded-lg px-1"
+            >
+              Added!
+            </span>
+          </transition>
         </div>
         <button class="px-4" @click="$emit('close-modal')">
           <img src="../assets/close.svg" alt="close" />
@@ -82,6 +90,8 @@ import IncomingBadge from './badges/IncomingBadge';
 import NewBadge from './badges/NewBadge';
 import OutgoingBadge from './badges/OutgoingBadge';
 
+import anime from 'animejs';
+
 export default {
   name: 'ItemModal',
   components: {
@@ -91,6 +101,11 @@ export default {
     NewBadge,
   },
   props: ['item'],
+  data: function () {
+    return {
+      addingItem: false,
+    };
+  },
   computed: {
     hemisphere() {
       return this.$store.state.hemisphere;
@@ -99,6 +114,30 @@ export default {
   methods: {
     addItemToInventory(item) {
       this.$store.commit('addItemToInventory', item);
+      this.addingItem = true;
+    },
+    enter(el, done) {
+      anime
+        .timeline({
+          targets: el,
+        })
+        .add({
+          scale: [0, 1],
+          complete: done,
+        })
+        .add({
+          duration: 300,
+          complete: () => (this.addingItem = false),
+        });
+    },
+    leave(el, done) {
+      anime({
+        targets: el,
+        scale: 0,
+        easing: 'linear',
+        duration: 100,
+        complete: done,
+      });
     },
   },
 };
