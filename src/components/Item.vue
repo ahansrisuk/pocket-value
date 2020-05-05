@@ -92,7 +92,7 @@ export default {
         })
         .add({
           targets: event.currentTarget,
-          duration: 300,
+          duration: 400,
           width: 25.344,
         });
     },
@@ -108,8 +108,8 @@ export default {
     leave(el, done) {
       anime({
         targets: el,
-        opacity: [1, 0],
-        duration: 80,
+        opacity: 0,
+        duration: 100,
         easing: 'easeInOutSine',
         complete: done,
       });
