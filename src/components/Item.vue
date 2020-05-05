@@ -39,8 +39,12 @@
           @click="addItemToInventory($event, item)"
           v-if="addItemButton"
         >
-          <span id="plus">+</span>
-          <!-- <span class="text-xs"> Added to pocket!</span> -->
+          <transition @enter="enter" @leave="leave" :css="false" mode="out-in">
+            <span v-if="!alerting" key="plus-sign">+</span>
+            <span v-if="alerting" class="text-xs" key="alert">
+              Added to pocket!</span
+            >
+          </transition>
         </button>
         <button
           @click="removeItemFromInventory(index)"
@@ -75,21 +79,40 @@ export default {
       anime
         .timeline({
           easing: 'easeInOutSine',
-          duration: 150,
         })
         .add({
           targets: event.currentTarget,
           width: 160,
+          duration: 150,
+          begin: () => (this.alerting = true),
         })
         .add({
-          targets: event.currentTarget.querySelector('#alert'),
-          opacity: [0, 1],
+          complete: () => (this.alerting = false),
+          duration: 600,
         })
         .add({
-          targets: event.currentTarget.querySelector('#alert'),
-          display: 'block',
-          opacity: [0, 1],
+          targets: event.currentTarget,
+          duration: 400,
+          width: 25.344,
         });
+    },
+    enter(el, done) {
+      anime({
+        targets: el,
+        opacity: [0, 1],
+        easing: 'easeInOutSine',
+        duration: 100,
+        complete: done,
+      });
+    },
+    leave(el, done) {
+      anime({
+        targets: el,
+        opacity: [1, 0],
+        duration: 100,
+        easing: 'easeInOutSine',
+        complete: done,
+      });
     },
     removeItemFromInventory(itemIndex) {
       this.$store.commit('removeItemFromInventory', itemIndex);
